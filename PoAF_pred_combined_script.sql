@@ -51,7 +51,7 @@ INTO #surgeries
 FROM fact.surgical_case sc
 INNER JOIN dim.[procedure] prc
 	ON prc.procedure_key = sc.primary_procedure_key
-	AND sc.primary_procedure_key = 555536
+	AND sc.primary_procedure_key = 555536   -- chnage to cardiac bypass 
 	--Laparoscopic sigmoid colectomy, coloproctostomy, sigmoidoscopy, repair of bladder laceration
 	--laparoscopic loop colostomy
 INNER JOIN dim.vw_patient p
@@ -66,9 +66,9 @@ IF OBJECT_ID('tempdb..#sepsis') IS NOT NULL BEGIN DROP TABLE #sepsis END;
 WITH sepsis_keys AS
 (
 SELECT DISTINCT diagnosis_key
-FROM dim.diagnosis_terminology dt
-WHERE ((dt.diagnosis_code_set = 'ICD-9-CM' AND dt.diagnosis_code IN ('995.92','785.52'))
-OR (dt.diagnosis_code_set = 'ICD-10-CM' AND dt.diagnosis_code IN ('R65.20','R65.21'))
+FROM dim.diagnosis_terminology dt 
+WHERE ((dt.diagnosis_code_set = 'ICD-9-CM' AND dt.diagnosis_code IN ('427.31'))  -- change to AF code here. 
+OR (dt.diagnosis_code_set = 'ICD-10-CM' AND dt.diagnosis_code IN ('I48'))   -- change to AF code here
 OR diagnosis_key = 773534)
 )
 
