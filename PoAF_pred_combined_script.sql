@@ -926,16 +926,16 @@ CREATE TABLE #search_terms (the_counter INT IDENTITY(0,1), common_name VARCHAR(1
 INSERT #search_terms (common_name,search_terms)
 SELECT 'Smoking','(diagnosis_name LIKE ''%smok%'' OR diagnosis_name LIKE ''%cig%'')'
 UNION SELECT 'Diabetes','(diagnosis_name LIKE ''%diabetes mellitus%'')'
-UNION SELECT 'Alcohol use','(diagnosis_code_base = ''F10'')'
+--UNION SELECT 'Alcohol use','(diagnosis_code_base = ''F10'')'
 UNION SELECT 'Chronic obstructive pulmonary disease (COPD)','(diagnosis_code_base IN (''J40'',''J41'',''J42'',''J43'',''J44'',''J47''))'
-UNION SELECT 'Ascites','(diagnosis_code_base = ''R18'')'
-UNION SELECT 'Cirrhosis','(diagnosis_code_base IN (''K70'',''K71'',''K74''))'
-UNION SELECT 'Congestive heart failure','(diagnosis_name LIKE ''%congestive heart%'')'
-UNION SELECT 'Coronary artery disease','(diagnosis_code_base IN (''I20'',''I21'',''I22'',''I23'',''I24'',''I25''))'
+--UNION SELECT 'Ascites','(diagnosis_code_base = ''R18'')'
+--UNION SELECT 'Cirrhosis','(diagnosis_code_base IN (''K70'',''K71'',''K74''))'
+--UNION SELECT 'Congestive heart failure','(diagnosis_name LIKE ''%congestive heart%'')'
+--UNION SELECT 'Coronary artery disease','(diagnosis_code_base IN (''I20'',''I21'',''I22'',''I23'',''I24'',''I25''))'
 UNION SELECT 'Hypertension','(diagnosis_code_base IN (''I10'',''I11'',''I12'',''I13'',''I15''))'
-UNION SELECT 'Peripheral vascular disease','(diagnosis_code = ''I73.9'')'
-UNION SELECT 'Renal failure','(diagnosis_code_base IN (''N17'',''N18'',''N19''))'
-UNION SELECT 'Stroke','(diagnosis_code_base IN (''I61'',''I62'',''I63'',''I64''))'
+--UNION SELECT 'Peripheral vascular disease','(diagnosis_code = ''I73.9'')'
+--UNION SELECT 'Renal failure','(diagnosis_code_base IN (''N17'',''N18'',''N19''))'
+--UNION SELECT 'Stroke','(diagnosis_code_base IN (''I61'',''I62'',''I63'',''I64''))'
 
 
 
