@@ -7,5 +7,5 @@ All data available at  R:\IPHAM\CHIP\Projects\Atrial_Fib_Prediction\allCABG_pati
 
 ##### 2). medical history for all CABG patients
  data: allCABG_covariate_medical_history.csv <br/>
- code: allCABG_medicalHistory.sql <br/>
+ code: allCABG_medicalHistory.sql; https://github.com/quzhouxiachuan/AF_Pred/blob/master/allCABG_medicalHistory.sql <br/>
 
