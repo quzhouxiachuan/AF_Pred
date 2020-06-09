@@ -107,7 +107,7 @@ JOIN [dim].[vw_diagnosis_event_profile] dp
 SELECT surgical_case_key, s.ir_id, patient_key, visit_key, surgery_start_datetime, start_datetime as AF_dxDate , discharge_datetime
 --into #temp 
 FROM #surgeries s
-inner JOIN #case_id c
+LEFT JOIN #case_id c
 ON s.ir_id = c.ir_id  
 --where start_datetime >= surgery_start_datetime 
 --and start_datetime < discharge_datetime
