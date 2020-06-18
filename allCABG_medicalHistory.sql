@@ -77,9 +77,11 @@ left join  dim.vw_diagnosis_terminology dti
 JOIN [dim].[vw_diagnosis_event_profile] dp  
 		ON dp.diagnosis_event_profile_key = de.diagnosis_event_profile_key
 		AND dp.load_type in ( 'Encounter Diagnosis', 'Problem List', 'Billing Diagnosis','Encounter Diagnosis')
-where ( dti.diagnosis_code_base between '401'and'405' or  dti.diagnosis_code_base between 'I10' and 'I16')
-and s.surgery_start_date_key > de.start_date_key
-
+where( 
+	( dti.diagnosis_code_base between '401'and'405' or  dti.diagnosis_code_base between 'I10' and 'I16')
+	 and diagnosis_code_set in ('ICD-9-CM', 'ICD-10-CM')
+	and s.surgery_start_date_key > de.start_date_key
+)
 --drop table #temp_hypertension 
 IF OBJECT_ID('tempdb..#temp_hypertension') IS NOT NULL BEGIN DROP TABLE #temp_hypertension END;
 select * , 'hypertension' as hypertension 
